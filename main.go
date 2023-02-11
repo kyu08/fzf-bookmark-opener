@@ -75,7 +75,7 @@ func initialize(workingDir string) error {
 	configFileFullPath := path.Join(configDirFullPath, configFileName)
 	if _, err := os.Stat(configFileFullPath); err != nil {
 		// ファイルが存在していない場合は作成する
-		if err := os.WriteFile(configFileFullPath, []byte(defaultBookmarks), 0o777); err != nil {
+		if err := os.WriteFile(configFileFullPath, []byte(defaultBookmarks), 0o755); err != nil {
 			return fmt.Errorf("os.WriteFile: %w", err)
 		}
 		fmt.Printf("~%s created.\n", configFileFullPath)
