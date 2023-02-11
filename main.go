@@ -16,8 +16,7 @@ import (
 const (
 	configDir        = ".config/fzf-bookmark-opener"
 	configFileName   = "config.yaml"
-	defaultBookmarks = `
-bookmarks:
+	defaultBookmarks = `bookmarks:
   - title: 'fzf-bookmark-opener(You can edit bookmarks to edit "~/.config/fzf-bookmark-opener/config.yaml"!)'
     url: 'https://github.com/kyu08/fzf-bookmark-opener'
   - title: 'fzf-bookmark-opener Issues'
@@ -38,7 +37,11 @@ type Bookmark struct {
 
 func main() {
 	// initで設定ファイルの作成
-	initialize("")
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		fmt.Fprint(os.Stderr, "err")
+	}
+	initialize(homeDir)
 
 	// 設定ファイルの読み込み
 	bookmarks, err := loadConfig()
