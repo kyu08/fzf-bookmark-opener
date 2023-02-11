@@ -27,6 +27,15 @@ bookmarks:
 `
 )
 
+type Config struct {
+	Config []Bookmark `yaml:"bookmarks"`
+}
+
+type Bookmark struct {
+	Title string `yaml:"title"`
+	Url   string `yaml:"url"`
+}
+
 func main() {
 	// initで設定ファイルの作成
 	initialize("")
@@ -46,15 +55,6 @@ func main() {
 
 	// ブラウザで表示する
 	browser.OpenURL(bookmarks[index].Url)
-}
-
-type Config struct {
-	Config []Bookmark `yaml:"bookmarks"`
-}
-
-type Bookmark struct {
-	Title string `yaml:"title"`
-	Url   string `yaml:"url"`
 }
 
 // initialize テスト容易性のために設定ファイルを配置するディレクトリを引数で受け取っている
