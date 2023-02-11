@@ -18,6 +18,20 @@
 go install github.com/kyu08/fzf-bookmark-opener@latest
 ```
 
+# How it works
+This command generates the configuration file(`~/.config/fzf-bookmark-opener/config.yaml`) when initial launch.
+The file is like below. You can add, update, delete bookmarks to edit this file.
+
+```yaml
+bookmarks:
+  - title: 'fzf-bookmark-opener'
+    url: 'https://github.com/kyu08/fzf-bookmark-opener'
+  - title: 'fzf-bookmark-opener Issues'
+    url: 'https://github.com/kyu08/fzf-bookmark-opener/issues'
+  - title: 'fzf-bookmark-opener PRs'
+    url: 'https://github.com/kyu08/fzf-bookmark-opener/pulls'
+```
+
 # Usage
 ## General Usage
 ## Configuration
