@@ -18,6 +18,7 @@ require (
 )
 
 require (
+	github.com/go-yaml/yaml v2.1.0+incompatible
 	github.com/ktr0731/go-fuzzyfinder v0.7.0
 	golang.org/x/sys v0.1.0 // indirect
 )

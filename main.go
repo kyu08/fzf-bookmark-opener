@@ -1,26 +1,26 @@
 package main
 
 import (
+	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
 
+	"github.com/go-yaml/yaml"
 	"github.com/ktr0731/go-fuzzyfinder"
 	"github.com/pkg/browser"
 )
 
-type Bookmark struct {
-	Title string
-	Url   string
-}
-
 func main() {
-	// TODO: 設定ファイルを読み込む
-	var bookmarks = []Bookmark{
-		{"fzf-bookmark-opener hoge", "https://github.com/kyu08/fzf-bookmark-opener"},
-		{"blog", "https://github.com/kyu08/blog"},
+	// TODO: initで設定ファイルの作成
+	// 設定ファイルの読み込み
+	bookmarks, err := loadConfig()
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	// fzfで選択する
-	index, err := find()
+	index, err := find(bookmarks)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,7 +29,36 @@ func main() {
 	browser.OpenURL(bookmarks[index].Url)
 }
 
-func find() (int, error) {
+type Config struct {
+	Config []Bookmark `yaml:"bookmarks"`
+}
+
+type Bookmark struct {
+	Title string `yaml:"title"`
+	Url   string `yaml:"url"`
+}
+
+func loadConfig() ([]Bookmark, error) {
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal("loadConfig os.UserHomeDir err:", err)
+	}
+
+	configFilePath := filepath.Join(homeDir, ".config", "fzf-bookmark-opener", "config.yaml")
+	b, err := ioutil.ReadFile(configFilePath)
+	if err != nil {
+		log.Fatal("loadConfig ioutil.ReadFile err:", err)
+	}
+
+	var c Config
+	if err := yaml.Unmarshal(b, &c); err != nil {
+		log.Fatal(err)
+	}
+
+	return c.Config, nil
+}
+
+func find(bookmarks []Bookmark) (int, error) {
 	return fuzzyfinder.Find(
 		bookmarks,
 		func(i int) string {
