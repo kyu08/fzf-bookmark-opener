@@ -1,6 +1,6 @@
 <div align="center">
 
-# fzf-bookmark-opener
+# 🔭 fzf-bookmark-opener
 
 `fzf-bookmark-opener` is the command line tool that opens bookmark using fzf.
 
@@ -12,14 +12,14 @@
 
 ![how to use](https://user-images.githubusercontent.com/49891479/218272272-e693c10d-c810-458a-bf46-9c3a4a2fe45a.gif)
 
-# Installation
+# 🔧 Installation
 🚨 This command tested only on macOS.
 
 ```
 go install github.com/kyu08/fzf-bookmark-opener@latest
 ```
 
-# How it works
+# 📓 How it works
 - This command generates the configuration file(`~/.config/fzf-bookmark-opener/config.yaml`) when initial launch.
 - `config.yaml` is like below.
 - You can add, update, delete bookmarks to edit this file.
