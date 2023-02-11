@@ -20,6 +20,7 @@ func main() {
 	}
 
 	// fzfで選択する
+	// TODO: escで終了した時に何も表示しないようにする
 	index, err := find(bookmarks)
 	if err != nil {
 		log.Fatal(err)
