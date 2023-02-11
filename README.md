@@ -6,6 +6,7 @@
 
 ![Language:Go](https://img.shields.io/static/v1?label=Language&message=Go&color=blue&style=flat-square)
 ![License:MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square)
+[![Latest Release](https://img.shields.io/github/v/release/kyu08/fzf-bookmark-opener?style=flat-square)](https://github.com/kyu08/fzf-bookmark-opener/releases/latest)
 
 </div>
 
