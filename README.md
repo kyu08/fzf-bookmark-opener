@@ -12,7 +12,7 @@
 ![how to use](https://user-images.githubusercontent.com/49891479/218272272-e693c10d-c810-458a-bf46-9c3a4a2fe45a.gif)
 
 # Installation
-🚨This command tested only on macOS.
+🚨 This command tested only on macOS.
 
 ```
 go install github.com/kyu08/fzf-bookmark-opener@latest
