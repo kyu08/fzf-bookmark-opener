@@ -13,6 +13,12 @@
 ここにgifをおく
 
 # Installation
+🚨This command tested only on macOS.
+
+```
+go install github.com/kyu08/fzf-bookmark-opener@latest
+```
+
 # Usage
 ## General Usage
 ## Configuration
