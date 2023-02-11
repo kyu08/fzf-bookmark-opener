@@ -33,6 +33,3 @@ bookmarks:
     url: 'https://github.com/kyu08/fzf-bookmark-opener/pulls'
 ```
 
-# Usage
-## General Usage
-## Configuration
