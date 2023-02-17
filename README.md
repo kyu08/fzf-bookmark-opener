@@ -15,6 +15,13 @@
 # 🔧 Installation
 🚨 This command tested only on macOS.
 
+## Install via Homebrew
+```
+brew tap kyu08/tap
+brew install kyu08/tap/fzf-bookmark-opener
+```
+
+## Build from source
 ```
 go install github.com/kyu08/fzf-bookmark-opener@latest
 ```
