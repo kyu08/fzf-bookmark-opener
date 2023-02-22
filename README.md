@@ -13,9 +13,9 @@
 ![how to use](https://user-images.githubusercontent.com/49891479/218272272-e693c10d-c810-458a-bf46-9c3a4a2fe45a.gif)
 
 # 🔧 Installation
-🚨 This command tested only on macOS.
+🚨 This command run only on a apple silicon machine.
 
-## Install via Homebrew
+## Install binary via Homebrew
 ```
 brew tap kyu08/tap
 brew install kyu08/tap/fzf-bookmark-opener
@@ -30,6 +30,7 @@ go install github.com/kyu08/fzf-bookmark-opener@latest
 - This command generates the configuration file(`~/.config/fzf-bookmark-opener/config.yaml`) when initial launch.
 - `config.yaml` is like below.
 - You can add, update, delete bookmarks to edit this file.
+  - You can generate GCP services URL using [gcp-url-generator](https://github.com/kyu08/gcp-url-generator) easily.
 
 ```yaml
 bookmarks:
@@ -41,3 +42,5 @@ bookmarks:
     url: 'https://github.com/kyu08/fzf-bookmark-opener/pulls'
 ```
 
+# ✨Related project
+  - [gcp-url-generator](https://github.com/kyu08/gcp-url-generator)
