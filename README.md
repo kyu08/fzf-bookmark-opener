@@ -42,5 +42,9 @@ bookmarks:
     url: 'https://github.com/kyu08/fzf-bookmark-opener/pulls'
 ```
 
-# ✨Related project
-  - [gcp-url-generator](https://github.com/kyu08/gcp-url-generator)
+# ✨ Related project(s)
+- [gcp-url-generator](https://github.com/kyu08/gcp-url-generator)
+
+# 🗒 Related Article(s)
+- [yamlに定義したbookmarkをfzfで選択してブラウザで開くくんを作った](https://blog.kyu08.com/posts/fzf-bookmark-opener)(Japanese)
+
