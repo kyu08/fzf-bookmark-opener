@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io/ioutil"
 	"os"
 	"path"
 	"testing"
@@ -27,7 +26,7 @@ func Test_initialize(t *testing.T) {
 		filePath := path.Join(configDir, "config.yaml")
 		assert.FileExists(t, filePath)
 
-		b, err := ioutil.ReadFile(filePath)
+		b, err := os.ReadFile(filePath)
 		assert.NoError(t, err)
 
 		content := string(b)
