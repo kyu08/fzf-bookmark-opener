@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"path"
@@ -41,7 +40,10 @@ func main() {
 	if err != nil {
 		fmt.Fprint(os.Stderr, "err")
 	}
-	initialize(homeDir)
+
+	if err := initialize(homeDir); err != nil {
+		log.Fatal(err)
+	}
 
 	// 設定ファイルの読み込み
 	bookmarks, err := loadConfig()
@@ -56,7 +58,9 @@ func main() {
 	}
 
 	// ブラウザで表示する
-	browser.OpenURL(bookmarks[index].Url)
+	if err := browser.OpenURL(bookmarks[index].Url); err != nil {
+		log.Fatal(err)
+	}
 }
 
 // initialize テスト容易性のために設定ファイルを配置するディレクトリを引数で受け取っている
@@ -92,7 +96,7 @@ func loadConfig() ([]Bookmark, error) {
 	}
 
 	configFilePath := filepath.Join(homeDir, configDir, configFileName)
-	b, err := ioutil.ReadFile(configFilePath)
+	b, err := os.ReadFile(configFilePath)
 	if err != nil {
 		log.Fatal("loadConfig ioutil.ReadFile err:", err)
 	}
