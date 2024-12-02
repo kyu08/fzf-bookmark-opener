@@ -6,6 +6,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"runtime/debug"
 
 	"github.com/go-yaml/yaml"
 	"github.com/ktr0731/go-fuzzyfinder"
@@ -35,6 +36,20 @@ type Bookmark struct {
 }
 
 func main() {
+	if 2 < len(os.Args) {
+		fmt.Println("too many arguments")
+		return
+	}
+
+	if len(os.Args) == 2 && os.Args[1] == "--version" {
+		bi, ok := debug.ReadBuildInfo()
+		if !ok {
+			return
+		}
+		fmt.Println(bi.Main.Version)
+		return
+	}
+
 	// initで設定ファイルの作成
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
